@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme only - OKLCH tokens */
+    --background: 14 6% 7%;
+    --foreground: 213 20% 93%;
+    --card: 213 18% 13%;
+    --card-foreground: 213 20% 93%;
+    --popover: 213 18% 13%;
+    --popover-foreground: 213 20% 93%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 213 15% 16%;
+    --secondary-foreground: 213 15% 70%;
+    --muted: 213 15% 16%;
+    --muted-foreground: 213 10% 55%;
+    --accent: 175 70% 57%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 18% 22%;
+    --input: 213 18% 22%;
+    --ring: 142 70% 45%;
+    --radius: 0.5rem;
+
+    /* Sidebar tokens */
+    --sidebar-background: 213 18% 10%;
+    --sidebar-foreground: 213 15% 70%;
+    --sidebar-primary: 142 70% 45%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 213 15% 16%;
+    --sidebar-accent-foreground: 213 20% 93%;
+    --sidebar-border: 213 18% 18%;
+    --sidebar-ring: 142 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+    min-height: 100vh;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Glow effects */
+.glow-green {
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.glow-teal {
+  text-shadow: 0 0 20px rgba(56, 230, 198, 0.5);
+}
+
+.card-glow {
+  box-shadow: 0 0 0 1px hsl(var(--border)), 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.mission-complete-glow {
+  box-shadow: 0 0 60px rgba(34, 197, 94, 0.3), 0 0 120px rgba(34, 197, 94, 0.15);
+}
+
+/* Three.js canvas */
+#three-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
